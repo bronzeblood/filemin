@@ -193,7 +193,7 @@ sub print_interface {
 
         $actions = "<a href='javascript:void(0)' onclick='renameDialog(\"$link\")' title='$text{'rename'}' data-container='body'>$rename_icon</a>";
 
-        if ($list[$count - 1][14] eq 'inode/directory') {
+        if ($list[$count - 1][14] eq 'inode/directory' or $list[$count - 1][14] eq 'inode/mount-point' or $list[$count - 1][14] eq 'inode/symlink')
             $href="?path=".$path.'/'.$link;
         } else {
             $href="download.cgi?file=$link&path=$path";
